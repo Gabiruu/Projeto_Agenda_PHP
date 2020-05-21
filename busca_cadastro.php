@@ -12,48 +12,40 @@
     
     <?php
 
-        $conexao = include "./conexao.php";
+    require_once('db.class.php');
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    $sql = "SELECT id, nome FROM tb_pessoas ORDER BY nome ";
+    $resultado = mysqli_query($link, $sql); 
 
-        //Faz uma busca de todos os nomes e id's do banco para alimentar o SELECT do formulário
-        $conexao = "SELECT id, nome FROM tb_pessoas ORDER BY nome ";
-        if (!$resultado = $mysqli->query($conexao)) {
-          echo "O site apresenta problemas entre em contato com o desenvolvedor";
-          echo $mysqli->connect_error;
-          exit;
-        }
-
-        //Verificando se tem algum registro de pessoas
-        if ($resultado->num_rows === 0) {
-            // Menssagem exibida ao não achar nenhum registro
-            echo "<div class='btn btn-danger col-sm-12'>";
-            echo "<h3>"; 
-            echo "Não existe nenhum registro na agenda";
-            echo "<h3>";    
-            echo "</div>";
-            exit;
-        }
-
-    //Mostra 
-        echo " <form class='form-horizontal mt-5 mb-5 col-sm-8 mx-auto' action='mostra_cadastro.php' method='post'>";  
-        echo "<div class='form-group '>";
-        echo "<label for='id'><p><strong>Selecione o nome da pessoa</strong></p></label>";
-        echo "<select id='id' name='id' class='form-control' >";
-        while ($cadastro = $resultado->fetch_assoc()) {
-          echo "<option value='".$cadastro['id']."'>" . $cadastro['nome'] . "</option>";  
-        }
-        echo "</select>";
-
+    //Verificando se tem algum registro no banco
+    if ($resultado->num_rows === 0) {
+        // Menssagem exibida ao não achar nenhum registro
+        echo "<div class='btn btn-danger col-sm-12'>";
+        echo "<h3>"; 
+        echo "Não existe nenhum registro na agenda";
+        echo "<h3>";    
         echo "</div>";
+        exit;
+    }
 
-        echo "<div class='form-group'><div class=''>";
-        echo "<button type='submit' class='btn btn-primary btn-block'>BUSCAR</button>";
-        echo "</div></div>";
-        echo"</form>";
+    //Mostra Resultados 
+    echo " <form class='form-horizontal mt-5 mb-5 col-sm-8 mx-auto' action='mostra_cadastro.php' method='post'>";  
+    echo "<div class='form-group '>";
+    echo "<label for='id'><p><strong>Selecione o nome da pessoa</strong></p></label>";
+    echo "<select id='id' name='id' class='form-control' >";
+    while ($cadastro = $resultado->fetch_assoc()) {
+      echo "<option value='".$cadastro['id']."'>" . $cadastro['nome'] . "</option>";  
+    }
+    echo "</select>";
 
-        //Esse trecho de codigo libera automaticamente
-        //o resultado e fecha a conexão MySQL
-        $resultado->free();
-        $mysqli->close();
+    echo "</div>";
+
+    echo "<div class='form-group'><div class=''>";
+    echo "<button type='submit' class='btn btn-primary btn-block'>BUSCAR</button>";
+    echo "</div></div>";
+    echo"</form>";
+
     ?>
     
   </section>

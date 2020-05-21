@@ -24,3 +24,7 @@
 
 - Criar uma forma de conferir o sucesso do insert e e criar um echo para ser 
   exibido na cadastra.php dinamicamento por ajax
+
+////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+- Não usar mais conexao.php e sim db.class.php

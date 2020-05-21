@@ -6,7 +6,6 @@
     $(document).ready( function(){
 
       $('#edita_cadastro').click(function(){
-        /*var id_usuario = $(this).data('id_usuario' );*/
         $.ajax({  
           url: 'recebe_edita_cadastro.php',
           method: 'post',
@@ -17,7 +16,6 @@
           }
         });
       });
-
     });
 
   </script>
@@ -43,40 +41,25 @@ if (isset($_POST['id']) && is_numeric($_POST['id'])) {
     $aid = 6;
 }
 
-$conexao = include "./conexao.php";
+require_once('db.class.php');
+$objDb = new db();
 
-// Perform an SQL query
-$conexao = "SELECT id, nome, telefone, email, endereco FROM tb_pessoas WHERE id = ". $aid ."";
-if (!$result = $mysqli->query($conexao)) {
-    // Oh no! The query failed. 
-    echo "Sorry, the website is experiencing problems.";
+$link = $objDb->conecta_mysql();
+$sql = "SELECT id, nome, telefone, email, endereco FROM tb_pessoas WHERE id = ". $aid ."";
+$resultado = mysqli_query($link, $sql); 
 
-    // Again, do not do this on a public site, but we'll show you how
-    // to get the error information
-    echo "Error: Our query failed to execute and here is why: \n";
-    echo "Query: " . $conexao . "\n";
-    echo "Errno: " . $mysqli->errno . "\n";
-    echo "Error: " . $mysqli->error . "\n";
-    exit;
+if ($resultado->num_rows === 0) {
+  echo '<script type="text/javascript">';
+  echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
+  echo    'window.location.href= "busca_cadastro.php";';
+  echo'</script>';
+  exit;
 }
 
-// Phew, we made it. We know our MySQL connection and query 
-// succeeded, but do we have a result?
-if ($result->num_rows === 0) {
-    // Oh, no rows! Sometimes that's expected and okay, sometimes
-    // it is not. You decide. In this case, maybe actor_id was too
-    // large? 
-    echo "We could not find a match for ID ".$aid.", sorry about that. Please try again.";
-    exit;
-}
-
-// Now, we know only one result will exist in this example so let's 
-// fetch it into an associated array where the array's keys are the 
-// table's column names
-$contato = $result->fetch_assoc();
+$contato = $resultado->fetch_assoc();
  
-$result->free();
-$mysqli->close();
+$resultado->free();
+$link->close();
 ?>
    
   </section>

@@ -38,16 +38,12 @@
 
           $sql = "SELECT id, nome, telefone, email, endereco FROM tb_pessoas ORDER BY nome";
 
-          /*echo $sql;
-          die();*/
-          
           $resultado = mysqli_query($link, $sql); 
 
           echo "<ol class='list-group'>\n";
           while ($contato = $resultado->fetch_assoc()) {
             echo "<li class='list-group-item list-group-item-primary mt-1 mb-1 col-sm-8 mx-auto'>";
             echo "<form id='id_contato_".$contato['id']."' class='form-horizontal' method='post' action='edita_cadastro.php'>";
-            /*echo "<p> Codigo: " . $cadastro['id'] . "</p>";*/
             echo "<p><strong> Nome: </strong> " . $contato['nome'] . "</p>";
             echo "<p><strong> Telefone: </strong> " . $contato['telefone'] . "</p>";
             echo "<p><strong> Email: </strong>" . $contato['email'] . "</p>";
@@ -63,7 +59,7 @@
           echo "</ol>";
 
           $resultado->free();
-          /*$mysqli->close();*/
+          $link->close();
           ?>
 
         </section>
