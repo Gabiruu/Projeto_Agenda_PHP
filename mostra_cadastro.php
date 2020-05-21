@@ -6,8 +6,8 @@
     $(document).ready( function(){
 
       $('.btn-excluir').click(function(){
-        var id_usuario = $(this).data('id_usuario' );
-        var nome_usuario = $(this).data('nome_usuario' );
+        let id_usuario = $(this).data('id_usuario' );
+        let nome_usuario = $(this).data('nome_usuario' );
         $.ajax({  
           url: 'deleta_usuario.php',
           method: 'post',
@@ -19,18 +19,15 @@
         });
       });
 
-      $('.btn-editar').click(function(){
-        var nome_usuario = $('#form_nome_usuario').data('form_nome_usuario');
-        var telefone_usuario = $('#form_telefone_usuario').data('form_telefone_usuario');
-        var endereco_usuario = $('#form_endereco_usuario').data('form_endereco_usuario');
-        var email_usuario = $('#form_email_usuario').data('form_email_usuario');
-
+      $('.btn-editarasdasdasd').click(function(){
+       let id_usuario = $(this).data('id_usuario');
+       
         $.ajax({  
-          url: 'outra_pag.php',
+          url: 'recebe_edita_cadastro.php',
           method: 'post',
-          data: { nome: nome_usuario, telefone: telefone_usuario, endereco: endereco_usuario, email: email_usuario }, 
-          success: function(data){
-            alert(data);
+          data: { id: id_usuario}, 
+          success: function(response){
+            window.location.replace("outra_pag.php");
           }
         });
       });
@@ -80,21 +77,20 @@
       }
 
       $contato = $resultado->fetch_assoc();
-      echo ' <div class="form-horizontal mt-5 mb-5 col-sm-8 mx-auto" action="edita_cadastro.php" method="post">';  
+      echo '<form class="form-horizontal mt-5 mb-5 col-sm-8 mx-auto" action="edita_cadastro.php" method="post">';  
       echo '<div class="form-group">';
-      echo '<p name="id" class="invisible" value="'.$contato['id'].'"></p>';
+      echo "<input type='text' name='id' class='invisible ' value='".$contato['id']."'>";
       echo '<p id="form_nome_usuario"> Nome: '.$contato['nome'].'<p/>';
       echo '<p id="form_telefone_usuario" > Telefone: '.$contato['telefone'].'<p/>';
       echo '<p id="form_endereco_usuario"> Endereço: '.$contato['endereco'].'<p/>';
       echo '<p id="form_email_usuario"> Email: '.$contato['email'].'<p/>';
       echo '</div>';
 
-
       echo '<div class="form-group"><div class="">';
-      echo '<button class="btn-editar btn btn-warning mr-3" type="button">Editar</button>';
+      echo '<button class="btn-editar btn btn-warning mr-3" type="submit" data-id_usuario="'.$contato['id'].'">Editar</button>';
       echo '<button class="btn-excluir btn btn-danger" type="button" data-id_usuario="'.$contato['id'].'" data-nome_usuario="'.$contato['nome'].'" >EXCLUIR</button>';
       echo '</div></div>';
-      echo '</div>';
+      echo '</form>';
 
       $resultado->free();
       $link->close();

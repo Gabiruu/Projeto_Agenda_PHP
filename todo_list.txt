@@ -1,30 +1,29 @@
- - Fazer uma mascara para telefone
+ - Fazer uma máscara para telefone
 
- - trocar a modelagem da conexão com o banco para ajax (padrão curso)
- 	Insert - OK
- 	Selec - 
- 	Alter - ñ
- 	delete - 
+ - Cria um alerta e redirecionar para a página de pesquisa
+ 	- mostra_cadastro.php
 
- - Fazer crud completo
+- Criar uma forma de conferir o sucesso do insert e e criar um echo para ser 
+  exibido na cadastra.php dinamicamento por ajax
+
+- Colocar uma logo e texto na home
+
+- edita_cadastro.php linha 41
+
+////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+- Não usar mais conexao.php e sim db.class.php
+
+- Fazer crud completo
 	 Insert ok
 	 Selec - ok
 	 Alter - ok
 	 delete - ok
 
- - Fazer cadatro de usuário
+ - Trocar a- modelagem da conexão com o banco para ajax
+ 	Insert - OK
+ 	delete - OK
 
- - criar opção de alter e delete na página mostra_cadastro.php
-	-Delete - ok
-	-Alter - Ñ
-
- - Cria um alerta e redirecionar para a página de pesquisa
- 	- Mostra cadastro
-
-
-- Criar uma forma de conferir o sucesso do insert e e criar um echo para ser 
-  exibido na cadastra.php dinamicamento por ajax
-
-////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-- Não usar mais conexao.php e sim db.class.php
+ - Criar opção de alter e delete na página mostra_cadastro.php
+	-Delete - OK
+	-Alter - OK

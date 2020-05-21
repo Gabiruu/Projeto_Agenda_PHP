@@ -38,6 +38,7 @@
 if (isset($_POST['id']) && is_numeric($_POST['id'])) {
     $aid = (int) $_POST['id'];
 } else {
+    //ARRUMAR ISSO
     $aid = 6;
 }
 
