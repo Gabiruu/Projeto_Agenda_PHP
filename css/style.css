@@ -1,0 +1,65 @@
+footer {
+	background-color:#d6d6d6;
+}
+
+#qm_somos{
+	text-align:justify; ;
+	padding: 2rem 7rem;
+	background-color:#e9ecef;
+}
+
+.card-div{
+	padding: 5%;
+}
+
+.like-icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin:10%;
+	/*border:solid red 1px;*/
+}
+
+.like-icon i{
+	/*border:solid black 1px;*/
+	position: absolute;
+	font-size: 2em;
+}
+
+.like-icon i:hover{
+	color: red;
+}
+
+.card-text small{
+	display: block;
+}
+
+.card-text strong{
+	display: block;
+}
+
+.crrsl-ofertas .card{
+	display: inline-block;
+}
+
+.navegacao{
+	background-color: #e9ecef;
+	border-bottom:solid 1px;
+	border-color: #007bff;
+}
+
+.wttp-icon{
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 50px;
+	right: 70px;
+	/*border:solid red 1px;*/
+	border-radius: 50%;
+	/*background-color: #4dc247;*/
+}
+
+.wttp-icon img{
+	width: 100px;
+	margin:-8px 0 0 -24px;
+}
