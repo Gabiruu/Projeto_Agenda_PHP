@@ -6,19 +6,33 @@
 - Criar uma forma de conferir o sucesso do insert e e criar um echo para ser 
   exibido na cadastra.php dinamicamento por ajax
 
-- Colocar uma logo e texto na home
+- ajustar os usos dos "let's e var's"
 
-- edita_cadastro.php linha 41
+- fazer confirmação de exclusão do contato
+
+- Criar mais de um modelo de visualização de todos os cadastros
+
+- Separar em front e back end
 
 ////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+- Ajustar o height de todas as paginas para ficar na tela inteira - OK
+
+- Colocar uma logo e texto na home - OK
+
+- edita_cadastro.php linha 41 - OK
+
+- Padonizar botões
+	- mostra_cadastros.php - OK
+	- mostra_cadastro.php - OK
 
 - Não usar mais conexao.php e sim db.class.php
 
 - Fazer crud completo
-	 Insert ok
-	 Selec - ok
-	 Alter - ok
-	 delete - ok
+	 Insert - OK
+	 Selec - OK
+	 Alter - OK
+	 delete - OK
 
  - Trocar a- modelagem da conexão com o banco para ajax
  	Insert - OK

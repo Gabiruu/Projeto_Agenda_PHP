@@ -4,8 +4,8 @@ footer {
 
 #qm_somos{
 	text-align:justify; ;
-	padding: 2rem 7rem;
-	background-color:#e9ecef;
+	/*padding: 2rem 7rem;
+	background-color:#e9ecef;*/
 }
 
 .card-div{
@@ -62,4 +62,33 @@ footer {
 .wttp-icon img{
 	width: 100px;
 	margin:-8px 0 0 -24px;
+}
+
+.btn-warning{
+	color: #212529!important;
+}
+
+.btn-danger{
+	color: #212529!important;
+}
+
+.height-80 {
+    height: 80vh;
+}
+
+.height-10 {
+    height: 10vh;
+}
+
+header{
+    height: 10vh;
+}
+
+.img-home{
+	width:10vw;	
+}
+
+.img-responsive {
+	margin: 70px auto 0;
+	display: block;
 }

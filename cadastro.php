@@ -72,10 +72,10 @@
       <?php include "./head.php"; ?>
     </header>
 
-    <section class="container mt-5">
+    <section class="height-80">
 
-      <form id="cadastro_usuario" class="form-horizontal mt-5 mb-5 col-sm-8 mx-auto">
-        <h1 class="mt-5 pt-5">CADASTRO</h1>
+      <form id="cadastro_usuario" class="form-horizontal col-sm-8 mx-auto">
+        <h1 class="">CADASTRO</h1>
         <div class="form-group">
           <label for="nome">Nome:</label>
           <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome">

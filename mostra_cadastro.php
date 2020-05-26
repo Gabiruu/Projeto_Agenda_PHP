@@ -41,7 +41,7 @@
     <?php include "./head.php"; ?>
   </header>
 
-  <section class="container mt-5 mb-5 col-sm-8 mx-auto">
+  <section class="height-80 col-sm-8 mx-auto teste">
     <h1 class="pt-4">CONTATO</h1>
 
     <?php
@@ -57,7 +57,7 @@
         echo '<script type="text/javascript">';
         echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
         echo    'window.location.href= "busca_cadastro.php";';
-        echo'</script>'
+        echo  '</script>'
         ;
       }
       
@@ -88,7 +88,7 @@
 
       echo '<div class="form-group"><div class="">';
       echo '<button class="btn-editar btn btn-warning mr-3" type="submit" data-id_usuario="'.$contato['id'].'">Editar</button>';
-      echo '<button class="btn-excluir btn btn-danger" type="button" data-id_usuario="'.$contato['id'].'" data-nome_usuario="'.$contato['nome'].'" >EXCLUIR</button>';
+      echo '<button class="btn-excluir btn btn-danger" type="button" data-id_usuario="'.$contato['id'].'" data-nome_usuario="'.$contato['nome'].'" >Excluir</button>';
       echo '</div></div>';
       echo '</form>';
 

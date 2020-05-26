@@ -7,7 +7,7 @@
     <?php include "./head.php"; ?>
   </header>
 
-  <section class="container mt-5 mb-5 col-sm-8 mx-auto">
+  <section class="height-80 col-sm-8 mx-auto">
     <h1 class="pt-5">BUSCA</h1>
     
     <?php
@@ -32,7 +32,7 @@
     //Mostra Resultados 
     echo " <form class='form-horizontal mt-5 mb-5 col-sm-8 mx-auto' action='mostra_cadastro.php' method='post'>";  
     echo "<div class='form-group '>";
-    echo "<label for='id'><p><strong>Selecione o nome da pessoa</strong></p></label>";
+    echo "<label for='id'><p><strong>Selecione o nome do contato</strong></p></label>";
     echo "<select id='id' name='id' class='form-control' >";
     while ($cadastro = $resultado->fetch_assoc()) {
       echo "<option value='".$cadastro['id']."'>" . $cadastro['nome'] . "</option>";  
@@ -43,14 +43,11 @@
 
     echo "<div class='form-group'><div class=''>";
     echo "<button type='submit' class='btn btn-primary btn-block'>BUSCAR</button>";
-    echo "</div></div>";
+    echo "</div>";
     echo"</form>";
 
     ?>
     
-  </section>
-  <section class="container mt-5 mb-5 col-sm-8 mx-auto">
-    <div class="container mt-5 mb-5 col-sm-8 mx-auto">
       <p class="text-center"><strong>OU</strong></p>
       <p class="text-center"><strong>Selecione todos os contatos</strong></p>
       <a class="btn btn-primary btn-block" href="mostra_cadastros.php">BUSCAR TODOS</a>

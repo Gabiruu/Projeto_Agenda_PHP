@@ -25,8 +25,7 @@
     <?php include "./head.php"; ?>
   </header>
 
-  <section class="container mt-5 mb-5 col-sm-8 mx-auto">
-    <h1 class="pt-4">CONTATO</h1>
+  <section class="container  col-sm-8 mx-auto">
    
 <?php
 
@@ -38,8 +37,10 @@
 if (isset($_POST['id']) && is_numeric($_POST['id'])) {
     $aid = (int) $_POST['id'];
 } else {
-    //ARRUMAR ISSO
-    $aid = 6;
+  echo '<script type="text/javascript">';
+  echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
+  echo    'window.location.href= "busca_cadastro.php";';
+  echo'</script>';
 }
 
 require_once('db.class.php');
@@ -66,10 +67,10 @@ $link->close();
   </section>
 
 
-  <section class="container mt-5">
+  <section class="heigh-80">
 
-    <form id="form_edita_cadastro" class="form-horizontal mt-5 mb-5 col-sm-8 mx-auto">
-      <h1 class="mt-5 pt-5">EDITAR CADASTRO</h1>
+    <form id="form_edita_cadastro" class="form-horizontal  col-sm-8 mx-auto">
+      <h1 class="pt-2">EDITAR CADASTRO</h1>
       <div class="invisible">
         <input type="text" class="form-control" id="id" name="id"  value="<?php echo $contato['id'] ?>">
       </div>

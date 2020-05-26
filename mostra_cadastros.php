@@ -27,7 +27,7 @@
       <?php include "./head.php"; ?>
     </header>
 
-    <section class="container mt-5 pt-5 mb-5 col-sm-8 mx-auto">
+    <section class="container mt-5 col-sm-8 mx-auto">
       <h1 class="mb-4">CADASTROS</h1>
 
       <?php
@@ -51,7 +51,7 @@
             echo "<input type='text' name='id' class='invisible ' value='".$contato['id']."'>";
             echo "<div class='form-group'><div class=''>";
             echo '<button class="btn btn-warning mr-3" type="submit">Editar</button>';
-            echo '<button class="btn-excluir btn btn-danger" data-id_usuario="'.$contato['id'].'" >EXCLUIR</button>';
+            echo '<button class="btn-excluir btn btn-danger" data-id_usuario="'.$contato['id'].'" >Excluir</button>';
             echo "</div></div>";
             echo "</form>";
             echo "</li>";
