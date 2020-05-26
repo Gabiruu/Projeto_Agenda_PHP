@@ -1,12 +1,7 @@
- - Fazer uma máscara para telefone
-
- - Cria um alerta e redirecionar para a página de pesquisa
- 	- mostra_cadastro.php
+////////////////////////// -- NÃO-REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 - Criar uma forma de conferir o sucesso do insert e e criar um echo para ser 
   exibido na cadastra.php dinamicamento por ajax
-
-- ajustar os usos dos "let's e var's"
 
 - fazer confirmação de exclusão do contato
 
@@ -15,6 +10,18 @@
 - Separar em front e back end
 
 ////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+- Fazer um card igual a mostra_cadastros.php
+	- mostra_cadastro.php - OK
+
+- ajustar os usos dos "let's e var's" - OK
+
+ - Cria um alerta e redirecionar para a página de pesquisa
+ 	- mostra_cadastro.php - OK
+
+ - Fazer uma máscara para telefone
+	- Cadastro - OK
+	- Editar - OK
 
 - Ajustar o height de todas as paginas para ficar na tela inteira - OK
 

@@ -64,6 +64,7 @@
 
       });
 
+
     </script>
 
   </head>
@@ -113,5 +114,8 @@
 
 </div>
 <?php include "./footer.php"; ?>
+<script>
+      $("#telefone").mask("(00) 00000-0000");
+</script>
 </body>
 </html>

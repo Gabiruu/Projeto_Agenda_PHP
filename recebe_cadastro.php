@@ -3,7 +3,7 @@
   require_once('db.class.php');
 
   $nome = $_POST['nome']; 
-  $telefone = $_POST['telefone'];
+  $telefone = preg_replace('/[^\d]/', '',$_POST['telefone']);
   $endereco = $_POST['endereco'];
   $email = $_POST['email'];
 

@@ -75,9 +75,11 @@
         echo'</script>';
         exit;
       }
-
+      
+      echo "<ol class='list-group'>\n";
+      echo "<li class='list-group-item list-group-item-primary '>";
       $contato = $resultado->fetch_assoc();
-      echo '<form class="form-horizontal mt-5 mb-5 col-sm-8 mx-auto" action="edita_cadastro.php" method="post">';  
+      echo '<form class="form-horizontal col-sm-10 mx-auto" action="edita_cadastro.php" method="post">';  
       echo '<div class="form-group">';
       echo "<input type='text' name='id' class='invisible ' value='".$contato['id']."'>";
       echo '<p id="form_nome_usuario"> Nome: '.$contato['nome'].'<p/>';
@@ -85,12 +87,13 @@
       echo '<p id="form_endereco_usuario"> Endereço: '.$contato['endereco'].'<p/>';
       echo '<p id="form_email_usuario"> Email: '.$contato['email'].'<p/>';
       echo '</div>';
-
       echo '<div class="form-group"><div class="">';
       echo '<button class="btn-editar btn btn-warning mr-3" type="submit" data-id_usuario="'.$contato['id'].'">Editar</button>';
       echo '<button class="btn-excluir btn btn-danger" type="button" data-id_usuario="'.$contato['id'].'" data-nome_usuario="'.$contato['nome'].'" >Excluir</button>';
       echo '</div></div>';
       echo '</form>';
+      echo "</li>";
+      echo "</ol>";
 
       $resultado->free();
       $link->close();

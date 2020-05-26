@@ -1,3 +1,5 @@
 <?php
-	echo $_SESSION['ajax_result'];
+  	$telefone = preg_replace('/[^\d]/', '',$_POST['telefone']);
+	
+	echo $telefone;
 ?>

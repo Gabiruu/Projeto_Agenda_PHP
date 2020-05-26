@@ -25,50 +25,45 @@
     <?php include "./head.php"; ?>
   </header>
 
-  <section class="container  col-sm-8 mx-auto">
-   
-<?php
+  <section class="heigh-80 col-sm-8 mx-auto">
+    
+  <?php
 
-// Recebe um id da pagina de busca_cadastro 
-// E verifica se não está vazio (isset) e se é um numero (is_numeric)
-// para usar como referencia na busca sql 
-//   http://localhost/Projeto_Agenda/mostra_cadastro.php?id=7
+  // Recebe um id da pagina de busca_cadastro 
+  // E verifica se não está vazio (isset) e se é um numero (is_numeric)
+  // para usar como referencia na busca sql 
+  //   http://localhost/Projeto_Agenda/mostra_cadastro.php?id=7
 
-if (isset($_POST['id']) && is_numeric($_POST['id'])) {
-    $aid = (int) $_POST['id'];
-} else {
-  echo '<script type="text/javascript">';
-  echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
-  echo    'window.location.href= "busca_cadastro.php";';
-  echo'</script>';
-}
+  if (isset($_POST['id']) && is_numeric($_POST['id'])) {
+      $aid = (int) $_POST['id'];
+  } else {
+    echo '<script type="text/javascript">';
+    echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
+    echo    'window.location.href= "busca_cadastro.php";';
+    echo'</script>';
+  }
 
-require_once('db.class.php');
-$objDb = new db();
+  require_once('db.class.php');
+  $objDb = new db();
 
-$link = $objDb->conecta_mysql();
-$sql = "SELECT id, nome, telefone, email, endereco FROM tb_pessoas WHERE id = ". $aid ."";
-$resultado = mysqli_query($link, $sql); 
+  $link = $objDb->conecta_mysql();
+  $sql = "SELECT id, nome, telefone, email, endereco FROM tb_pessoas WHERE id = ". $aid ."";
+  $resultado = mysqli_query($link, $sql); 
 
-if ($resultado->num_rows === 0) {
-  echo '<script type="text/javascript">';
-  echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
-  echo    'window.location.href= "busca_cadastro.php";';
-  echo'</script>';
-  exit;
-}
+  if ($resultado->num_rows === 0) {
+    echo '<script type="text/javascript">';
+    echo    'alert("Não conseguimos achar essa pessoa em nossos registros");';
+    echo    'window.location.href= "busca_cadastro.php";';
+    echo'</script>';
+    exit;
+  }
 
-$contato = $resultado->fetch_assoc();
- 
-$resultado->free();
-$link->close();
-?>
-   
-  </section>
-
-
-  <section class="heigh-80">
-
+  $contato = $resultado->fetch_assoc();
+  
+  $resultado->free();
+  $link->close();
+  ?>
+    
     <form id="form_edita_cadastro" class="form-horizontal  col-sm-8 mx-auto">
       <h1 class="pt-2">EDITAR CADASTRO</h1>
       <div class="invisible">
@@ -107,5 +102,8 @@ $link->close();
 
 </div>
     <?php include "./footer.php"; ?>
+    <script>
+      $("#telefone").mask("(00) 00000-0000");
+    </script>
 </body>
 </html>
