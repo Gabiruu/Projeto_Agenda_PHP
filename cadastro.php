@@ -51,7 +51,7 @@
             //por ajax para a pagina recebe_cadastro.php
             
             $.ajax({
-              url: 'recebe_cadastro.php',
+              url: 'backend/recebe_cadastro.php',
               method: 'post',
               data: $('#cadastro_usuario').serialize(),
               success: function(data) {

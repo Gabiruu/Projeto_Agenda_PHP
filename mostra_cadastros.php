@@ -8,7 +8,7 @@
         $('.btn-excluir').click(function(){
           var id_usuario = $(this).data('id_usuario' );
           $.ajax({  
-            url: 'deleta_usuario.php',
+            url: 'backend/deleta_usuario.php',
             method: 'post',
             data: { deletar_usuario_id: id_usuario },
             success: function(data){
@@ -31,7 +31,7 @@
       <h1 class="mb-4">CADASTROS</h1>
 
       <?php
-          require_once('db.class.php');
+          require_once('backend/db.class.php');
 
           $objDb = new db();
           $link = $objDb->conecta_mysql();

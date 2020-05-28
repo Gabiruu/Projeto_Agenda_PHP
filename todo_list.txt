@@ -11,6 +11,8 @@
 
 ////////////////////////// -- REALIZADOS -- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+- Separar em front e back end - OK
+
 - Fazer um card igual a mostra_cadastros.php
 	- mostra_cadastro.php - OK
 

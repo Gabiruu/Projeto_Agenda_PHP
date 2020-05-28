@@ -9,25 +9,12 @@
         let id_usuario = $(this).data('id_usuario' );
         let nome_usuario = $(this).data('nome_usuario' );
         $.ajax({  
-          url: 'deleta_usuario.php',
+          url: 'backend/deleta_usuario.php',
           method: 'post',
           data: { deletar_usuario_id: id_usuario },
           success: function(data){
             alert("Usuario "+nome_usuario+" deletado com sucesso!");
             window.setTimeout(function() {window.location.href = 'busca_cadastro.php';}, 30);
-          }
-        });
-      });
-
-      $('.btn-editarasdasdasd').click(function(){
-       let id_usuario = $(this).data('id_usuario');
-       
-        $.ajax({  
-          url: 'recebe_edita_cadastro.php',
-          method: 'post',
-          data: { id: id_usuario}, 
-          success: function(response){
-            window.location.replace("outra_pag.php");
           }
         });
       });
@@ -61,7 +48,7 @@
         ;
       }
       
-      require_once('db.class.php');
+      require_once('backend/db.class.php');
       $objDb = new db();
 
       $link = $objDb->conecta_mysql();

@@ -1,5 +1,5 @@
   <?php
-	  require_once('db.class.php');
+	  require_once('backend/db.class.php');
 
 	  $deletar_usuario_id = $_POST['deletar_usuario_id'];
 

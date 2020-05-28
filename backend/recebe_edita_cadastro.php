@@ -4,7 +4,7 @@
 
   $id_id = $_POST['id'];
   $id_nome = $_POST['nome'];
-  $id_telefone = $_POST['telefone'];
+  $id_telefone = preg_replace('/[^\d]/', '',$_POST['telefone']);
   $id_email = $_POST['email'];
   $id_endereco = $_POST['endereco'];
 

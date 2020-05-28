@@ -12,7 +12,7 @@
     
     <?php
 
-    require_once('db.class.php');
+    require_once('backend/db.class.php');
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql = "SELECT id, nome FROM tb_pessoas ORDER BY nome ";
